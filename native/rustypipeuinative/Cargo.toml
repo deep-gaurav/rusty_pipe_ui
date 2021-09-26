@@ -1,0 +1,19 @@
+[package]
+name = "rustypipeuinative"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "rustypipeuinative"
+crate-type = ["cdylib"]
+
+
+[dependencies]
+rusty_pipe_cli = {git = "https://github.com/deep-gaurav/rusty_pipe_cli.git"}
+openssl = { version = "0.10", features = ["vendored"] }
+clang = {version = "*", features = ["runtime"]}
+
+[build-dependencies]
+cbindgen = "0.14.3"
+dart-bindgen = "0.1.7"
