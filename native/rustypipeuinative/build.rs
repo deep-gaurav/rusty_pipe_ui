@@ -20,7 +20,7 @@ fn main() {
         )
         .into(),
         windows: DynamicLibraryCreationMode::open(
-            "${File(Platform.resolvedExecutable).parent.path}/lib/librustypipeuinative.dll",
+            "${File(Platform.resolvedExecutable).parent.path}/librustypipeuinative.dll",
         )
         .into(),
         ..Default::default()
