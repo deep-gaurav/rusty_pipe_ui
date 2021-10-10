@@ -11,8 +11,15 @@ crate-type = ["cdylib"]
 
 [dependencies]
 rusty_pipe_cli = {git = "https://github.com/deep-gaurav/rusty_pipe_cli.git"}
+# rusty_pipe_cli = {path =  "../../../rusty_pipe_cli"}
 openssl = { version = "0.10", features = ["vendored"] }
 clang = {version = "*", features = ["runtime"]}
+android_logger = "0.10"
+log = "0.4"
+
+[target.'cfg(target_os = "android")'.dependencies]
+oboe = {version = "0.4", features = ["shared-stdcxx"]}
+# ndk-glue = "0.4"
 
 [build-dependencies]
 cbindgen = "0.14.3"
