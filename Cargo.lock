@@ -2636,7 +2636,7 @@ dependencies = [
 [[package]]
 name = "rusty_pipe_cli"
 version = "0.1.0"
-source = "git+https://github.com/deep-gaurav/rusty_pipe_cli.git#b02ed082004de3d396f3ccbe3ea9a75e8ba9068a"
+source = "git+https://github.com/deep-gaurav/rusty_pipe_cli.git#d7d9e098ba598d5db84c22c1a86a38a70771300a"
 dependencies = [
  "Boa",
  "anyhow",
