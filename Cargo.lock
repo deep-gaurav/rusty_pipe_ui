@@ -722,6 +722,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "cesu8"
+version = "1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6d43a04d8753f35258c91f8ec639f792891f748a1edbd759cf1dcea3382ad83c"
+
+[[package]]
 name = "cexpr"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -846,15 +852,6 @@ dependencies = [
  "sha2",
  "time 0.2.27",
  "version_check",
-]
-
-[[package]]
-name = "copy_dir"
-version = "0.1.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6e4281031634644843bd2f5aa9c48cf98fc48d6b083bd90bb11becf10deaf8b0"
-dependencies = [
- "walkdir",
 ]
 
 [[package]]
@@ -1138,6 +1135,25 @@ name = "discard"
 version = "1.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "212d0f5754cb6769937f4501cc0e67f4f4483c8d2c3e1e922ee9edbe4ab4c7c0"
+
+[[package]]
+name = "ducc"
+version = "0.1.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "41bc1f8a30712eb6a7454f85747f218d9dfb41d173bb223a8c4f18daff829207"
+dependencies = [
+ "cesu8",
+ "ducc-sys",
+]
+
+[[package]]
+name = "ducc-sys"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0cdea834bf6a0fde522374db4404695c5f0465fc0ee814f2878d76eaabd4ffed"
+dependencies = [
+ "cc",
+]
 
 [[package]]
 name = "encoding_rs"
@@ -1787,16 +1803,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "libquickjs-sys"
-version = "0.9.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3f0b24e9bd171b75ae0295bd428fb8fe58410fb23156e5f34a4657a70c3cee96"
-dependencies = [
- "cc",
- "copy_dir",
-]
-
-[[package]]
 name = "libsamplerate-sys"
 version = "0.1.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2336,9 +2342,9 @@ dependencies = [
 
 [[package]]
 name = "ppv-lite86"
-version = "0.2.10"
+version = "0.2.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ac74c624d6b2d21f425f752262f42188365d7b8ff1aff74c82e45136510a4857"
+checksum = "c3ca011bd0129ff4ae15cd04c4eef202cadf6c51c21e47aba319b4e0501db741"
 
 [[package]]
 name = "pretty_env_logger"
@@ -2386,16 +2392,6 @@ name = "quick-error"
 version = "1.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a1d01941d82fa2ab50be1e79e6714289dd7cde78eba4c074bc5a4374f650dfe0"
-
-[[package]]
-name = "quick-js"
-version = "0.4.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "19cb4cefcb00f4ab9b332664d06005a74f582ac16aa959c6ad5912957bd83e5f"
-dependencies = [
- "libquickjs-sys",
- "once_cell",
-]
 
 [[package]]
 name = "quote"
@@ -2568,7 +2564,7 @@ dependencies = [
 [[package]]
 name = "rusty_pipe"
 version = "0.1.0"
-source = "git+https://github.com/deep-gaurav/rusty_pipe.git#6f112a786883c4a6614e9cbcd3ca4c66dce24c2e"
+source = "git+https://github.com/deep-gaurav/rusty_pipe.git#8a646139063a14ce96a0604a1f7aa4aa0d718216"
 dependencies = [
  "async-trait",
  "failure",
@@ -2585,7 +2581,7 @@ dependencies = [
 [[package]]
 name = "rusty_pipe_cli"
 version = "0.1.0"
-source = "git+https://github.com/deep-gaurav/rusty_pipe_cli.git#9fa851ebfacefeda493cc2cc3c0eb97af0036541"
+source = "git+https://github.com/deep-gaurav/rusty_pipe_cli.git#1cf9f896852e9273acab126671bacfd46e6aa2c5"
 dependencies = [
  "anyhow",
  "async-graphql",
@@ -2597,13 +2593,13 @@ dependencies = [
  "crossbeam-channel",
  "crossterm 0.21.0",
  "dirs",
+ "ducc",
  "failure",
  "futures",
  "lazy_static",
  "log",
  "portpicker",
  "pretty_env_logger",
- "quick-js",
  "rand 0.8.4",
  "rb",
  "rusty_pipe",
@@ -3580,16 +3576,6 @@ name = "waker-fn"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9d5b2c62b4012a3e1eca5a7e077d13b3bf498c4073e33ccd58626607748ceeca"
-
-[[package]]
-name = "walkdir"
-version = "0.1.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c66c0b9792f0a765345452775f3adbd28dde9d33f30d13e5dcc5ae17cf6f3780"
-dependencies = [
- "kernel32-sys",
- "winapi 0.2.8",
-]
 
 [[package]]
 name = "want"
