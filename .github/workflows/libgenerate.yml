@@ -39,15 +39,15 @@ jobs:
       #   run: cd native/rustypipeuinative
       - name: Build project
         run: cargo build --release
-      - name: list release files
-        run: cd .\target\release
+#       - name: list release files
+#         run: cd .\target\release
       - name: list 
         run: ls .\target\release
         
       - uses: actions/upload-artifact@v2
         with:
           name: windows-release
-          path: librustypipeuinative.dll
+          path: target/release/rustypipeuinative.dll
       # - name: Set output
       #   id: vars
       #   run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
