@@ -35,14 +35,18 @@ jobs:
         # with:
         #   path: target/release
         #   key: ${{ runner.os }}-release-mac_x86_64-stable-debug-target-${{ hashFiles('**/Cargo.lock') }}
-      - name: Change to native
-        run: cd native/rustypipeuinative
+      # - name: Change to native
+      #   run: cd native/rustypipeuinative
       - name: Build project
         run: cargo build --release
+      - name: list release files
+        run: cd target/release
+        run: ls
+        
       - uses: actions/upload-artifact@v2
         with:
           name: windows-release
-          path: target/release/librustypipeuinative.dll
+          path: librustypipeuinative.dll
       # - name: Set output
       #   id: vars
       #   run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
