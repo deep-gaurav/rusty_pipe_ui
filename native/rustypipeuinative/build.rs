@@ -1,4 +1,10 @@
 use dart_bindgen::{config::*, Codegen};
+#[cfg(not(target_os = "linux"))]
+fn main(){
+
+}
+
+#[cfg(target_os = "linux")]
 fn main() {
     let crate_dir = std::env::var("CARGO_MANIFEST_DIR").unwrap();
     let config = cbindgen::Config {

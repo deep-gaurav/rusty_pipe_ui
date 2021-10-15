@@ -1,6 +1,7 @@
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - master
 
 # on:
 #   push:
@@ -37,15 +38,19 @@ jobs:
       - name: Change to native
         run: cd native/rustypipeuinative
       - name: Build project
-        run: cargo build --release --locked
-      - name: Set output
-        id: vars
-        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
-      - name: Upload binary to release
-        uses: svenstaro/upload-release-action@v1-release
+        run: cargo build --release
+      - uses: actions/upload-artifact@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: target/release/librustypipeuinative.dll
-          asset_name: librustypipeuinative.dll
-          tag: ${{ steps.vars.outputs.tag  }}
-          overwrite: true
+          name: windows-release
+          path: target/release/librustypipeuinative.dll
+      # - name: Set output
+      #   id: vars
+      #   run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+      # - name: Upload binary to release
+      #   uses: svenstaro/upload-release-action@v1-release
+      #   with:
+      #     repo_token: ${{ secrets.GITHUB_TOKEN }}
+      #     file: target/release/librustypipeuinative.dll
+      #     asset_name: librustypipeuinative.dll
+      #     tag: ${{ steps.vars.outputs.tag  }}
+      #     overwrite: true
