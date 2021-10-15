@@ -41,6 +41,7 @@ jobs:
         run: cargo build --release
       - name: list release files
         run: cd target/release
+      - name: list 
         run: ls
         
       - uses: actions/upload-artifact@v2
