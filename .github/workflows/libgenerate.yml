@@ -40,7 +40,7 @@ jobs:
       - name: Build project
         run: cargo build --release
       - name: list release files
-        run: cd target/release
+        run: cd .\target\release
       - name: list 
         run: ls
         
