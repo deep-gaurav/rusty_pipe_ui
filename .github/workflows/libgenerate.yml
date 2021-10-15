@@ -42,7 +42,7 @@ jobs:
       - name: list release files
         run: cd .\target\release
       - name: list 
-        run: ls .\target
+        run: ls .\target\release
         
       - uses: actions/upload-artifact@v2
         with:
