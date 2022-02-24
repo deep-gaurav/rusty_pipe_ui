@@ -50,6 +50,11 @@ description = "Runs the rust compiler."
 category = "Build"
 dependencies = ["linux","android"]
 
+[tasks.build.android]
+description = "Runs the rust compiler."
+category = "Build"
+dependencies = ["android"]
+
 [tasks.build.windows]
 description = "Runs the rust compiler."
 category = "Build"
